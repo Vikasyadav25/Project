@@ -15,7 +15,7 @@
 
 .formcontrol {
   width: 400px;
-  height:450px;
+  height:400px;
   padding: 20px;
   border-radius: 15px;
   border: 2px solid wheat;
@@ -42,7 +42,7 @@ form {
   gap: 20px;
 }
 
-input[type="text"],input[type="number"],input[type="email"],
+input[type="text"],input[type="email"],
 input[type="password"] {
   padding: 10px;
   border: 2px solid white;

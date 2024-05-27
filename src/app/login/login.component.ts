@@ -1,16 +1,14 @@
+// this is file for login.component.ts
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [],
+  imports: [CommonModule,RouterOutlet,RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  constructor(public routor: Router) {}
-  signUp() {
-    console.log('jel');
-    this.routor.navigate(['/signup'], {});
-  }
+
 }

@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-
+ 
 @Component({
-  selector: 'app-sign-up',
+  selector: 'app-forgot-pass',
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterLink],
-  templateUrl: './sign-up.component.html',
-  styleUrl: './sign-up.component.css',
+  templateUrl: './forgot-pass.component.html',
+  styleUrl: './forgot-pass.component.css',
 })
-export class SignUpComponent {}
+export class ForgotPassComponent {}
