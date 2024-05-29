@@ -1,17 +1,17 @@
-* {
+ * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: sans-serif;
 }
 
-:host {
+ .check1 {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: url('../image/bg.svg');
-}
+  background: url('../../image/bg.svg');
+} 
 
 .formcontrol {
   width: 400px;

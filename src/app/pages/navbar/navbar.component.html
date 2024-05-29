@@ -1,0 +1,27 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div >
+        <div >
+          <img id="logo" routerLink="/home" />
+        </div>
+      </div>
+      <div class="content">
+        <div  (click)="openMenu()">
+                    <div class="check"></div>
+                    <div class="check"></div>
+                    <div class="check"></div>
+                </div>
+        <div class="desktop_menu" [class.mobile_menu]="menuValue">
+          <ul>
+            <li (click)="closeMenu()" routerLink="/login">Sign in</li>
+            <li (click)="closeMenu()" >Order</li>
+            <li (click)="closeMenu()">Cart</li>
+            <li (click)="closeMenu()" >Profile</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<router-outlet/>

@@ -5,12 +5,12 @@
   font-family: sans-serif;
 }
 
-:host {
+.check1 {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: url('../image/bg.svg');
+  background: url('../../image/bg.svg');
 }
 
 .formcontrol {
@@ -45,6 +45,7 @@ form {
 input[type="text"],input[type="number"],input[type="email"],
 input[type="password"] {
   padding: 10px;
+  font-size: 15px;
   border: 2px solid white;
   width: 100%;
   border-radius: 25px;
