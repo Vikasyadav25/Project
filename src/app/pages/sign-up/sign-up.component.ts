@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
 import {
@@ -9,8 +9,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { SignupService } from '../../core/services/signup/signup.service';
 import { SignUp } from '../../core/models/common.model';
+import { AuthService } from '../../core/services/auth/auth.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -25,15 +25,15 @@ import { SignUp } from '../../core/models/common.model';
   templateUrl: '../sign-up/sign-up.component.html',
   styleUrl: '../sign-up/sign-up.component.css',
 })
-export class SignUpComponent implements OnInit {
+export class SignUpComponent  {
   signUp1: SignUp[] = [];
   signUpForm!: FormGroup;
   emailCheck: any[] = [];
 
   constructor(
     private fb: FormBuilder,
-    private signupService: SignupService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {
     this.signUpForm = this.fb.group({
       name: new FormControl('', [Validators.required]),
@@ -43,25 +43,7 @@ export class SignUpComponent implements OnInit {
       description: new FormControl(''),
     });
   }
-  ngOnInit(): void {
-    this.signupService
-      .getSignUpDetail()
-      .snapshotChanges()
-      .subscribe({
-        next: (data) => {
-          console.log(data);
-          data.forEach((change) => {
-            const payload = change.payload.val();
-
-            if (payload && payload.email) {
-              this.emailCheck.push(payload.email.toLowerCase());
-            }
-          });
-          console.log(this.emailCheck);
-        },
-      });
-  }
-
+  
   onSubmit() {
     if (this.signUpForm.value.name === '') {
       alert('Please Enter Name');
@@ -71,7 +53,7 @@ export class SignUpComponent implements OnInit {
     } else if (
       this.emailCheck.includes(this.signUpForm.value.email.toLowerCase())
     ) {
-     this.signUpForm.get('email')?.setValue('');
+      this.signUpForm.get('email')?.setValue('');
       alert('Email already exists!');
       return;
     } else if (this.signUpForm.value.password === '') {
@@ -87,7 +69,11 @@ export class SignUpComponent implements OnInit {
       alert('Confirm Password should be match.');
       return;
     } else {
-      this.signupService.addSignUpDeatils(this.signUpForm.value);
+      this.authService.register(
+        this.signUpForm.value.name,
+        this.signUpForm.value.email,
+        this.signUpForm.value.password
+      );
       this.router.navigate(['login']);
       alert('Sign Up Succesfully!');
     }

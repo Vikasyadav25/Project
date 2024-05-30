@@ -1,7 +1,7 @@
 export interface SignUp{
-    key?:string;
+    // key?:string;
     name:string;
     email:string;
     password:string;
-    password1:string;
+    // password1:string;
 }

@@ -5,16 +5,22 @@ import {AngularFireModule} from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { firebaseConfig } from './core/constants/constants';
+import { environment } from './core/constants/constants';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    importProvidersFrom([AngularFireModule.initializeApp(firebaseConfig)]),
+    importProvidersFrom([
+      AngularFireModule.initializeApp(environment.firebaseConfig),
+    ]),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFirestoreModule,
+    BrowserModule,
+    FormsModule,
   ],
 };
