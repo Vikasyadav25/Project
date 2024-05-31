@@ -26,6 +26,10 @@ export class AuthService {
   logout() {
     return this.afAuth.signOut();
   }
+  // password reset
+  async forgotPassword(email: string) {
+    return await this.afAuth.sendPasswordResetEmail(email);
+  }
 
   // Get current user
   getUser() {

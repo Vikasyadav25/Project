@@ -74,7 +74,7 @@ export class SignUpComponent  {
         this.signUpForm.value.email,
         this.signUpForm.value.password
       );
-      this.router.navigate(['login']);
+      this.router.navigate(['home']);
       alert('Sign Up Succesfully!');
     }
   }

@@ -1,20 +1,20 @@
 <div>
-  <app-navbar></app-navbar>
+  <app-navbar ></app-navbar>
 </div>
 <div class="check1">
 <div class="formcontrol">
   <header>
     <h4>Login</h4>
   </header>
-  <form>
+  <form [formGroup]="loginForm1" (ngSubmit)="login()">
     <div class="form_wrapper">
-      <input id="input" type="text" required>
-      <label for="input">Email</label>
+      <input  formControlName="email"  type="email" required>
+      <label >Email</label>
       <i class="material-icons">email</i>
     </div>
     <div class="form_wrapper">
-      <input id="password" type="password" required>
-      <label for="password">Password</label>
+      <input formControlName="password"  type="password" required>
+      <label >Password</label>
       <i class="material-icons">lock</i>
     </div>
     <div class="remember_box">
@@ -24,7 +24,7 @@
       </div>
       <a routerLink="/reset" routerLinkActive="active">Forgot Password ?</a>
     </div>
-    <button>Login</button>
+    <button  type="submit" >Login</button>
     <div class="new_account">
       Don't have account ? <a routerLink="/signup" routerLinkActive="active">Sign up</a>
     </div>

@@ -6,13 +6,12 @@
   <header>
     <h4>Reset Password</h4>
   </header>
-  <form>
+  <form  [formGroup]="forgotPasswordForm" (ngSubmit)="submit()">
     <div class="form_wrapper">
-      <input id="input" type="email" required>
+      <input id="email" type="email" formControlName="email" required>
       <label for="input">Email</label>
-      <i class="material-icons">email</i>
     </div>
-    <div class="form_wrapper">
+    <!-- <div class="form_wrapper">
       <input id="password" type="password" required>
       <label for="password">New Password</label>
       <i class="material-icons">lock</i>
@@ -21,8 +20,8 @@
       <input id="password" type="password" required>
       <label for="password">Confirm Password</label>
       <i class="material-icons">lock</i>
-    </div>
-    <button>Submit</button>
+    </div> -->
+    <button type="submit" >Send Reset Email</button>
     <div class="new_account">
       Back to Login ? <a routerLink="/login" routerLinkActive="active">Login</a>
     </div>
