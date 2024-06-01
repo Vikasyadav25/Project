@@ -8,7 +8,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from './core/constants/constants';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,6 +22,6 @@ export const appConfig: ApplicationConfig = {
     AngularFirestoreModule,
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule),
+    ReactiveFormsModule), provideAnimationsAsync('noop'),
   ],
 };

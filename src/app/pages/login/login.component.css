@@ -86,6 +86,7 @@ i {
   align-items: center;
   gap: 5px;
   color: white;
+  text-decoration:underline;
 }
 
 a {

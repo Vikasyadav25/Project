@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { GoogleAuthProvider } from '@firebase/auth';
 
 @Injectable({
   providedIn: 'root',
@@ -20,6 +21,9 @@ export class AuthService {
   }
   login(email: string, password: string) {
     return this.afAuth.signInWithEmailAndPassword(email, password);
+  }
+  loginWithGoogle() {
+    return this.afAuth.signInWithPopup(new GoogleAuthProvider());
   }
 
   // Logout

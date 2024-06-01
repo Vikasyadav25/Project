@@ -18,17 +18,18 @@
       <i class="material-icons">lock</i>
     </div>
     <div class="remember_box">
-      <div class="remember">
-        <input type="checkbox">
-        Remember me
-      </div>
+      <div class="remember" (click)="signInWithGoogle()">
+          Login with Google
+        </div>
       <a routerLink="/reset" routerLinkActive="active">Forgot Password ?</a>
     </div>
     <button  type="submit" >Login</button>
     <div class="new_account">
       Don't have account ? <a routerLink="/signup" routerLinkActive="active">Sign up</a>
     </div>
+    
   </form>
+  
 </div>
 </div>
 <router-outlet/>

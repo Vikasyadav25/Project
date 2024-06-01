@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
+
 import {
   FormBuilder,
   FormControl,
@@ -20,7 +21,7 @@ import { FirebaseError } from 'firebase/app';
     RouterOutlet,
     RouterLink,
     NavbarComponent,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   templateUrl: '../login/login.component.html',
   styleUrls: ['../login/login.component.css'], // Corrected to styleUrls
@@ -32,12 +33,21 @@ export class LoginComponent {
     private fb: FormBuilder,
     private router: Router,
     private authService: AuthService
-  ) {
+  ) { 
     this.loginForm1 = this.fb.group({
       email: new FormControl('', [Validators.required, Validators.email]), // Added email validator
       password: new FormControl('', [Validators.required]),
       description: new FormControl(''),
     });
+  }
+  async signInWithGoogle() {
+    try {
+      await this.authService.loginWithGoogle().then((res: any) => {
+        this.router.navigate(['home']);
+      });
+    } catch (error: any) {
+      this.handleError(error);
+    }
   }
 
   async login() {
