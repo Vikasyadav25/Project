@@ -14,22 +14,17 @@
                 </div>
         <div class="desktop_menu" [class.mobile_menu]="menuValue">
           <ul>
-             <li *ngIf="user">{{ user.displayName }}</li>
+
+             <li *ngIf="user" class="profile">{{ user.displayName }}</li>
              <li *ngIf="user" (click)="logout()">Logout</li>
              <li *ngIf="!user" (click)="closeMenu()" routerLink="/login">Sign in</li>
-              <li *ngIf="user" (click)="closeMenu()">Order</li>
-               <li *ngIf="user" (click)="closeMenu()">Cart</li>
               <li *ngIf="user" (click)="closeMenu()">Profile</li>
-            
-           
-            <!-- <li (click)="closeMenu()" routerLink="/login">Sign in</li>
-            <li (click)="closeMenu()" >Order</li>
-            <li (click)="closeMenu()">Cart</li>
-            <li (click)="closeMenu()" >Profile</li> -->
           </ul>
         </div>
       </div>
     </div>
   </div>
+  
 </header>
+
 <router-outlet/>

@@ -1,0 +1,104 @@
+
+.icon-image{
+    height: 70px;
+    width: 50px;
+}
+.welcome{
+    height: 300px;
+    text-align: center;
+    padding-top: 145px;
+}
+.welcome h1 {
+    color: #003366;
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .welcome p {
+    color: #666666;
+    font-size: 18px;
+  }
+  
+  .create-account {
+    background-image:  url('https://www.esafbank.com/wp-content/uploads/2023/07/ESFB-Web-Banner-SB-ESFBS_0416_06_07_23-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    margin: 35px;
+    height: 600px;
+    background-color: #ffffff;
+    padding-top: 100px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .create-account h2 {
+    color: #003366;
+    font-size: 28px;
+  }
+  
+  .create-account p {
+    color: #666666;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .welcome button {
+    background-color: #0066cc;
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .create-account button:hover {
+    background-color: #004a99;
+  }
+  
+  .features {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .feature-box {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .feature-box img {
+    width: 80px;
+    margin-bottom: 15px;
+  }
+  
+  .feature-box h3 {
+    color: #003366;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  .feature-box p {
+    color: #666666;
+    font-size: 16px;
+  }
+  
+  footer {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 40px;
+  }
+  
+  footer .container {
+    display: flex;
+    justify-content: center;
+  }
