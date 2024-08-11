@@ -15,10 +15,11 @@
         <div class="desktop_menu" [class.mobile_menu]="menuValue">
           <ul>
 
-             <li *ngIf="user" class="profile">{{ user.displayName }}</li>
+             <li *ngIf="user" class="profile" (click)="homePage()">{{ user.displayName }}</li>
+             <li *ngIf="user" class="profile" (click)="homePage()">Home</li>
              <li *ngIf="user" (click)="logout()">Logout</li>
              <li *ngIf="!user" (click)="closeMenu()" routerLink="/login">Sign in</li>
-              <li *ngIf="user" (click)="closeMenu()">Profile</li>
+              <li *ngIf="user"  (click)="navigateToProfile()">Profile</li>
           </ul>
         </div>
       </div>

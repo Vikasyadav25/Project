@@ -9,19 +9,21 @@ import { environment } from './core/constants/constants';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     importProvidersFrom([
-      AngularFireModule.initializeApp(environment.firebaseConfig),
+      AngularFireModule.initializeApp(environment.firebaseConfig),HttpClientModule,MatSnackBarModule
     ],
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFirestoreModule,
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule), provideAnimationsAsync('noop'),
+    ReactiveFormsModule), provideAnimationsAsync('noop'), provideAnimationsAsync(), provideAnimationsAsync()
   ],
 };

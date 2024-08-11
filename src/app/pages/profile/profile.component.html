@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+
+<div class="profile-container">
+    <h2 class="profile-title">Profile Information</h2>
+    <form (ngSubmit)="onSubmit()" #profileForm="ngForm">
+      <div class="form-group">
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name" [(ngModel)]="profile.first_name" disabled />
+      </div>
+  
+      <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name" [(ngModel)]="profile.last_name" disabled />
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" [(ngModel)]="profile.email" disabled />
+      </div>
+  
+      <div class="form-group">
+        <label for="phone_number">Phone Number</label>
+        <input type="text" id="phone_number" name="phone_number" [(ngModel)]="profile.phone_number" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="address">Address</label>
+        <textarea id="address" name="address" [(ngModel)]="profile.address" required></textarea>
+      </div>
+  
+      <div class="btn">
+        <button type="submit" class="submit-btn">Submit</button>
+        <button type="button" class="submit-btn-cn" (click)="navigateToProfile()">Cancel</button>
+      </div>
+
+
+    </form>
+  </div>
+  
+  

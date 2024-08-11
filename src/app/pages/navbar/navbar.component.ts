@@ -41,4 +41,12 @@ export class NavbarComponent {
       this.closeMenu();
     });
   }
+  navigateToProfile() {
+    this.closeMenu();
+    this.router.navigate(['/profile']);
+  }
+  homePage(){
+    this.closeMenu();
+    this.router.navigate(['/home']);
+  }
 }
