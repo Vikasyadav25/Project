@@ -2,8 +2,8 @@
   <div class="container">
     <div class="row">
       <div >
-        <div >
-          <img id="logo" routerLink="/home" />
+        <div class="logo-div">
+          <img id="logo" routerLink="/home" /><p>Dhano</p>
         </div>
       </div>
       <div class="content">
@@ -16,9 +16,10 @@
           <ul>
 
              <li *ngIf="user" class="profile" (click)="homePage()">{{ user.displayName }}</li>
-             <li *ngIf="user" class="profile" (click)="homePage()">Home</li>
+             <li  class="profile" (click)="homePage()">Home</li>
+             <li   *ngIf="user"  (click)="homePage()">Account</li>
              <li *ngIf="user" (click)="logout()">Logout</li>
-             <li *ngIf="!user" (click)="closeMenu()" routerLink="/login">Sign in</li>
+             <li *ngIf="!user" (click)="closeMenu()" routerLink="/login">Login in</li>
               <li *ngIf="user"  (click)="navigateToProfile()">Profile</li>
           </ul>
         </div>

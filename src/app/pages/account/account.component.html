@@ -1,1 +1,99 @@
-<p>account works!</p>
+<app-navbar></app-navbar>
+<div class="account-creation-container">
+    <h2>Apply for Bank Account</h2>
+    <form (ngSubmit)="onSubmit()" #accountForm="ngForm" class="account-form">
+      
+      <!-- First Row: Four Form Fields -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="first_name">First Name</label>
+          <input type="text" id="first_name" name="first_name" [(ngModel)]="account.first_name" disabled="" />
+        </div>
+        <div class="form-group">
+          <label for="last_name">Last Name</label>
+          <input type="text" id="last_name" name="last_name" [(ngModel)]="account.last_name" disabled="" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" [(ngModel)]="account.email" disabled="" />
+        </div>
+        <div class="form-group">
+          <label for="phone_number">Phone Number</label>
+          <input type="text" id="phone_number" name="phone_number" [(ngModel)]="account.phone_number" required />
+        </div>
+      </div>
+      
+      <!-- Second Row: Photo Upload Field -->
+      <div class="form-row">
+        <div class="form-group photo-upload">
+          <label for="photo">Photo Upload</label>
+          <input type="file" id="photo" name="photo" (change)="onPhotoUpload($event)" />
+          <img *ngIf="photoPreview" [src]="photoPreview" alt="Photo Preview" class="photo-preview"/>
+        </div>
+      </div>
+      
+      <!-- Remaining Rows: Two Form Fields Each -->
+      <div class="form-row">
+        <div class="form-group">
+            <label for="branch">Branch</label>
+            <input type="text" id="branch" name="branch" [(ngModel)]="account.branch" required />
+          </div>
+        <div class="form-group">
+          <label for="account_type">Account Type</label>
+          <select id="account_type" name="account_type" [(ngModel)]="account.account_type" required>
+            <option value="Savings">Savings</option>
+            <option value="Current">Current</option>
+            <option value="Fixed Deposit">Fixed Deposit</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group">
+          <label for="adhar_card">Aadhar Card</label>
+          <input type="text" id="adhar_card" name="adhar_card" [(ngModel)]="account.adhar_card" required />
+        </div>
+        <div class="form-group">
+          <label for="date_of_birth">Date of Birth</label>
+          <input type="date" id="date_of_birth" name="date_of_birth" [(ngModel)]="account.date_of_birth" required />
+        </div>
+      </div>
+  
+      <div class="form-row">
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" [(ngModel)]="account.address" required></textarea>
+          </div>
+        <div class="form-group">
+          <label for="district">District</label>
+          <input type="text" id="district" name="district" [(ngModel)]="account.district" required />
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group">
+          <label for="state">State</label>
+          <input type="text" id="state" name="state" [(ngModel)]="account.state" required />
+        </div>
+        <div class="form-group">
+          <label for="pincode">Pincode</label>
+          <input type="text" id="pincode" name="pincode" [(ngModel)]="account.pincode" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group photo-upload">
+          <label for="photo">Upload Adhar Card</label>
+          <input type="file" id="photo" name="photo" (change)="onPhotoUpload($event)" />
+          <img *ngIf="photoPreview" [src]="photoPreview" alt="Photo Preview" class="photo-preview"/>
+        </div>
+      </div>
+  
+      <!-- <button type="submit" class="submit-btn">Submit</button> -->
+      <div class="btn">
+        <button type="submit" class="submit-btn">Submit</button>
+        <button type="button" class="submit-btn-cn" (click)="navigateToProfile()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  

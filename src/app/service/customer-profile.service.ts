@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class CustomerProfileService {
   private apiUrl1 = "http://localhost:8082/customers/CustomerUpdate"; // Replace with your API endpoint
   private apiUrl2 = "http://localhost:8082/customers/CustomerOnload";
+  private apiUrl3 = "http://localhost:8082/account/createAccount";
 
   constructor(private http: HttpClient) { }
    httpOption={
@@ -21,5 +22,8 @@ export class CustomerProfileService {
   }
   onloadProfile(profileData: any): Observable<any> {
     return this.http.post(this.apiUrl2, profileData );
+  }
+  createAccount(profileData: any): Observable<any> {
+    return this.http.post(this.apiUrl3, profileData );
   }
 }

@@ -84,12 +84,14 @@ export class ProfileComponent  {
     }else{
     this.profileService.updateProfile(this.profile).subscribe(
       response => {
+        this.router.navigate(['/home']);
         console.log('Profile updated successfully Go Back to Home page', response);
         this.snackBar.open('Profile updated successfully!', 'Close', {
           duration: 3000, // Duration in milliseconds
           verticalPosition: 'bottom', // Position at the bottom of the screen
           horizontalPosition: 'start', 
         });
+
       },
       error => {
         console.error('Error updating profile', error);

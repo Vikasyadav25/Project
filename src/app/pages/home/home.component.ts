@@ -35,6 +35,13 @@ export class HomeComponent {
   menuValue: boolean = false;
   menu_icon: string = 'bi bi-list';
   user: any = null;
+
+  ngOnInit() {
+    this.afAuth.authState.subscribe((user) => {
+      this.user = user;
+    });
+  }
+
   closeMenu() {
     this.menuValue = false;
     this.menu_icon = 'bi bi-list';
@@ -42,5 +49,9 @@ export class HomeComponent {
   navigateToProfile() {
     this.closeMenu();
     this.router.navigate(['/profile']);
+  }
+  navigateToCreateAccount() {
+    this.closeMenu();
+    this.router.navigate(['/accountCreate']);
   }
 }

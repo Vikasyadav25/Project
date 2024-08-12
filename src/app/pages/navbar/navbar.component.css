@@ -1,6 +1,6 @@
 header {
   height: fit-content;
-  background: #02534d;
+  background: #327;
 }
 .row {
   display: flex;
@@ -10,16 +10,26 @@ header {
 }
 .content {
   margin-top: 15px;
+  height: 60px;
 }
 #logo {
-  height: 50px;
-  width: 50px;
-  /* border: none; */
-  background: url(../../image/hano_logo.png);
+  height: 70px;
+  width: 70px;
+  background: url(../../image/dhano2.webp);
   background-repeat: no-repeat;
   background-size: cover;
   justify-content: center;
+  border-radius: 35px;
 
+}
+.logo-div{
+  display: flex;
+  gap: 10px;
+}
+.logo-div p{
+  color: white;
+  font-size: large;
+  margin-top: 25px;
 }
 #logo:hover {
   cursor: pointer;
@@ -34,6 +44,7 @@ header {
   display: inline-block;
   font-size: 18px;
   margin-left: 26px;
+  margin-top: 10px;
 }
 .desktop_menu ul li:hover {
   font-size: 19px;
@@ -52,7 +63,7 @@ header {
     right: -280px;
     transition: 0.4s ease-in-out;
     top: 64px;
-    background: #02534d;
+    background: #327;
     width: 280px;
     height: 100%;
   }

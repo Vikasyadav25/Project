@@ -13,6 +13,47 @@
     font-size: 36px;
     margin-bottom: 10px;
   }
+  /* styles.css or your component-specific CSS */
+
+/* styles.css or your component-specific CSS */
+/* styles.css or your component-specific CSS */
+
+.notification-banner {
+  /* position: fixed; */
+  /* bottom: 0; */
+  width: 100%;
+  background-color: #327;
+  color: #fff;
+  padding: 10px 0;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.scrolling-text {
+  display: flex;
+  width: 100%;
+  white-space: nowrap;
+  animation: scroll-text 20s linear infinite;
+}
+
+.text-content {
+  display: inline-block;
+  padding-right: 0;
+  flex-shrink: 0;
+  min-width: 100%;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+
   
   .welcome p {
     color: #666666;

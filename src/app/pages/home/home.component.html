@@ -1,18 +1,20 @@
 <app-navbar></app-navbar>
 
-<div class="welcome">
-    <h1>Welcome to Your Banking Dashboard</h1>
-    <p>Manage your accounts, make transfers, and more.</p>
-    <button (click)="navigateToProfile()">Manage Profile Details</button> 
-  </div>
   
-  <div class="create-account">
+  <div class="create-account" (click)="navigateToCreateAccount()">
     <!-- <h2>Start Your Savings Journey</h2>
     <p>Open a savings account today and start saving for your future.</p>
     <button onclick="window.location.href='create-savings.html'">Create a Savings Account</button> -->
   </div>
+
+<div class="welcome" *ngIf="user" >
+  <h1>Welcome to Your Banking Dashboard</h1>
+  <p >Manage your accounts, make transfers, and more.</p>
+
+  <button (click)="navigateToProfile()">Manage Profile Details</button> 
+</div>
   
-  <div class="features">
+  <div class="features" *ngIf="user">
     <div class="feature-box">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQItJhpNC2cFC1JZyEvLUCrHp0VXv-f8c12RQ&s" alt="Savings Icon" class="icon-image">
         <h3>Savings Accounts</h3>
@@ -29,3 +31,16 @@
         <p>Need help? Our support team is here to assist you with any queries.</p>
     </div>
   </div>
+  <div class="notification-banner">
+    <div class="scrolling-text">
+      <div class="text-content">
+        Banking App Features: Create or Apply for a Bank Account, Transfer funds, Withdraw and Deposit Amounts, View transactions, Apply for Loans, and use repayment options. Will add more feature working on that. &nbsp; | &nbsp;
+        Banking App Features: Create or Apply for a Bank Account, Transfer funds, Withdraw and Deposit Amounts, View transactions, Apply for Loans, and use repayment options. Will add more feature working on that. &nbsp; | &nbsp;
+      </div>
+      <div class="text-content">
+        Banking App Features: Create or Apply for a Bank Account, Transfer funds, Withdraw and Deposit Amounts, View transactions, Apply for Loans, and use repayment options. Will add more feature working on that.  &nbsp; | &nbsp; 
+        Banking App Features: Create or Apply for a Bank Account, Transfer funds, Withdraw and Deposit Amounts, View transactions, Apply for Loans, and use repayment options. Will add more feature working on that. &nbsp; | &nbsp;
+      </div>
+    </div>
+  </div>
+  
